@@ -15,6 +15,7 @@
 		FF7FFB401D1955970041C5B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF7FFB3E1D1955970041C5B1 /* LaunchScreen.storyboard */; };
 		FF7FFB4B1D1955970041C5B1 /* LineChartTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7FFB4A1D1955970041C5B1 /* LineChartTests.m */; };
 		FF7FFB561D1955970041C5B1 /* LineChartUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7FFB551D1955970041C5B1 /* LineChartUITests.m */; };
+		FF7FFB651D1955EF0041C5B1 /* LineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = FF7FFB641D1955EF0041C5B1 /* LineChartView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,9 @@
 		FF7FFB511D1955970041C5B1 /* LineChartUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LineChartUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF7FFB551D1955970041C5B1 /* LineChartUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LineChartUITests.m; sourceTree = "<group>"; };
 		FF7FFB571D1955970041C5B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF7FFB631D1955EF0041C5B1 /* LineChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineChartView.h; sourceTree = "<group>"; };
+		FF7FFB641D1955EF0041C5B1 /* LineChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineChartView.m; sourceTree = "<group>"; };
+		FFDEA20A1D19577B0035D0F9 /* ConstConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ConstConfig.h; path = ../ConstConfig.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,9 @@
 				FF7FFB341D1955970041C5B1 /* AppDelegate.m */,
 				FF7FFB361D1955970041C5B1 /* ViewController.h */,
 				FF7FFB371D1955970041C5B1 /* ViewController.m */,
+				FFDEA20A1D19577B0035D0F9 /* ConstConfig.h */,
+				FF7FFB631D1955EF0041C5B1 /* LineChartView.h */,
+				FF7FFB641D1955EF0041C5B1 /* LineChartView.m */,
 				FF7FFB391D1955970041C5B1 /* Main.storyboard */,
 				FF7FFB3C1D1955970041C5B1 /* Assets.xcassets */,
 				FF7FFB3E1D1955970041C5B1 /* LaunchScreen.storyboard */,
@@ -273,6 +280,7 @@
 				FF7FFB381D1955970041C5B1 /* ViewController.m in Sources */,
 				FF7FFB351D1955970041C5B1 /* AppDelegate.m in Sources */,
 				FF7FFB321D1955970041C5B1 /* main.m in Sources */,
+				FF7FFB651D1955EF0041C5B1 /* LineChartView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,6 +506,7 @@
 				FF7FFB5C1D1955970041C5B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FF7FFB5D1D1955970041C5B1 /* Build configuration list for PBXNativeTarget "LineChartTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +515,7 @@
 				FF7FFB5F1D1955970041C5B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FF7FFB601D1955970041C5B1 /* Build configuration list for PBXNativeTarget "LineChartUITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +524,7 @@
 				FF7FFB621D1955970041C5B1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
