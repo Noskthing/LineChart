@@ -53,7 +53,7 @@
     
     //draw setup
     [self drawCoorinateAxis:context];
-
+    
     [self drawTextOnXAxis:context];
     
     [self drawPoints:context];
@@ -93,6 +93,30 @@
     
     CGContextStrokePath(context);
     
+    
+
+    //draw arrow
+    const CGFloat arrowNum = 7;
+    
+    //X
+    const CGPoint pointsOfXAxis[] = {
+        CGPointMake(kChartViewEdgeOfHorizontal - arrowNum, kChartViewEdgeOfVertical + arrowNum),
+        CGPointMake(kChartViewEdgeOfHorizontal, kChartViewEdgeOfVertical),
+        CGPointMake(kChartViewEdgeOfHorizontal + arrowNum, kChartViewEdgeOfVertical + arrowNum)
+    };
+    CGContextAddLines(context, pointsOfXAxis, sizeof(pointsOfXAxis)/sizeof(pointsOfXAxis[0]));
+    CGContextStrokePath(context);
+    
+    //Y
+    const CGPoint pointsOfYAxis[] = {
+        CGPointMake(self.frame.size.width - kChartViewEdgeOfHorizontal - arrowNum, self.frame.size.height - kChartViewEdgeOfVertical - arrowNum),
+        CGPointMake(self.frame.size.width - kChartViewEdgeOfHorizontal, self.frame.size.height - kChartViewEdgeOfVertical),
+        CGPointMake(self.frame.size.width - kChartViewEdgeOfHorizontal - arrowNum, self.frame.size.height - kChartViewEdgeOfVertical + arrowNum)
+    };
+    CGContextAddLines(context, pointsOfYAxis, sizeof(pointsOfYAxis)/sizeof(pointsOfYAxis[0]));
+    CGContextStrokePath(context);
+    
+    //draw dash
     if (self.ShowDashed)
     {
         CGFloat lengths[] = {5, 5};
@@ -179,7 +203,7 @@
 {
     UITouch * touch = [touches anyObject];
     CGPoint  point = [touch locationInView:self];
-//    NSLog(@"result is %ld",(NSInteger)(point.x - kChartViewEdgeOfHorizontal) % (NSInteger)kXAxisSpace);
+    //    NSLog(@"result is %ld",(NSInteger)(point.x - kChartViewEdgeOfHorizontal) % (NSInteger)kXAxisSpace);
     
     if ((NSInteger)(point.x - kChartViewEdgeOfHorizontal) % (NSInteger)kXAxisSpace < kErrorRange || (NSInteger)(point.x - kChartViewEdgeOfHorizontal) % (NSInteger)kXAxisSpace > kXAxisSpace - kErrorRange)
     {
