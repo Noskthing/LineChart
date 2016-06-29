@@ -19,11 +19,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    
     LineChartView * lineChartView = [[LineChartView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 200)];
+    
     lineChartView.backgroundColor = [UIColor greenColor];
-    lineChartView.coordinateItems = self.dataSourceArray;
-    lineChartView.ShowDashed = YES;
-    [lineChartView drawLineChartView];
+    lineChartView.chartView.coordinateItems = self.dataSourceArray;
+    lineChartView.chartView.ShowDashed = YES;
+    lineChartView.chartView.lineColor = [UIColor grayColor];
+    lineChartView.chartView.maxValueOfYAxis = 100;
+    lineChartView.chartView.animated = YES;
+    
+    UIView * view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
+    view.layer.anchorPoint = CGPointMake(0.5, 0.5);
+    view.backgroundColor = [UIColor redColor];
+    [lineChartView addSubview:view];
+    
+    lineChartView.chartView.pointDidSelectedBlock = ^(CoordinateItem * coordinateItem,CGPoint location){
+        NSLog(@"aaaaa");
+        view.layer.position = location;
+    };
+    
     [self.view addSubview:lineChartView];
 }
 

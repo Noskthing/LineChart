@@ -37,3 +37,17 @@ static NSInteger kNumOfYAxisPoints = 10;
  *  X Axis space between points
  */
 static CGFloat kXAxisSpace = 50;
+
+/**
+ *  default is 5
+ */
+static CGFloat kCirclePointWidth = 5;
+
+/**
+ *  default is 1
+ */
+static CGFloat kLineWidth = 1;
+/**
+ *  Allowed Error Range
+ */
+static CGFloat kErrorRange = 10;

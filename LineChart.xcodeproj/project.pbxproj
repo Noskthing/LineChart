@@ -82,6 +82,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FF310EEE1D236E13001E941B /* Chart */ = {
+			isa = PBXGroup;
+			children = (
+				FFDEA20A1D19577B0035D0F9 /* ConstConfig.h */,
+				FF7FFB631D1955EF0041C5B1 /* LineChartView.h */,
+				FF7FFB641D1955EF0041C5B1 /* LineChartView.m */,
+			);
+			name = Chart;
+			sourceTree = "<group>";
+		};
 		FF7FFB241D1955970041C5B1 = {
 			isa = PBXGroup;
 			children = (
@@ -105,13 +115,11 @@
 		FF7FFB2F1D1955970041C5B1 /* LineChart */ = {
 			isa = PBXGroup;
 			children = (
+				FF310EEE1D236E13001E941B /* Chart */,
 				FF7FFB331D1955970041C5B1 /* AppDelegate.h */,
 				FF7FFB341D1955970041C5B1 /* AppDelegate.m */,
 				FF7FFB361D1955970041C5B1 /* ViewController.h */,
 				FF7FFB371D1955970041C5B1 /* ViewController.m */,
-				FFDEA20A1D19577B0035D0F9 /* ConstConfig.h */,
-				FF7FFB631D1955EF0041C5B1 /* LineChartView.h */,
-				FF7FFB641D1955EF0041C5B1 /* LineChartView.m */,
 				FF7FFB391D1955970041C5B1 /* Main.storyboard */,
 				FF7FFB3C1D1955970041C5B1 /* Assets.xcassets */,
 				FF7FFB3E1D1955970041C5B1 /* LaunchScreen.storyboard */,
