@@ -45,20 +45,30 @@
     return self;
 }
 
+-(void)setCoordinateItems:(NSArray<CoordinateItem *> *)coordinateItems
+{
+    _coordinateItems = coordinateItems;
+    [self setNeedsDisplay];
+}
+
 -(void)drawRect:(CGRect)rect
 {
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetStrokeColorWithColor(context, _lineColor.CGColor);
     CGContextSetLineWidth(context, kStrokeWidth);
     
-    //draw setup
-    [self drawCoorinateAxis:context];
+    if (self.coordinateItems)
+    {
+        //draw setup
+        [self drawCoorinateAxis:context];
+        
+        [self drawTextOnXAxis:context];
+        
+        [self drawPoints:context];
+        
+        [self drawLines:context];
+    }
     
-    [self drawTextOnXAxis:context];
-    
-    [self drawPoints:context];
-    
-    [self drawLines:context];
 }
 
 #pragma mark
@@ -94,7 +104,7 @@
     CGContextStrokePath(context);
     
     
-
+    
     //draw arrow
     const CGFloat arrowNum = 7;
     
