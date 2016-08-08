@@ -26,6 +26,8 @@
 @interface ChartView()
 {
     NSMutableArray * _pointArray;
+    
+    CAShapeLayer * _lineLayer;
 }
 @end
 
@@ -57,14 +59,14 @@
     CGContextSetStrokeColorWithColor(context, _lineColor.CGColor);
     CGContextSetLineWidth(context, kStrokeWidth);
     
+    //draw setup
+    [self drawCoorinateAxis:context];
+    
+    [self drawPoints:context];
+    
     if (self.coordinateItems)
     {
-        //draw setup
-        [self drawCoorinateAxis:context];
-        
         [self drawTextOnXAxis:context];
-        
-        [self drawPoints:context];
         
         [self drawLines:context];
     }
@@ -169,6 +171,13 @@
     
     [_lineColor setFill];
     
+    _lineLayer = [CAShapeLayer layer];
+    //线条宽度
+    _lineLayer.lineWidth = kLineWidth;
+    //线条的颜色
+    _lineLayer.strokeColor = [_lineColor CGColor];
+    [self.layer addSublayer:_lineLayer];
+    
     //画线
     for (int i = 0; i < _pointArray.count - 1; i++)
     {
@@ -177,19 +186,12 @@
         //终点
         CGPoint endPoint = [_pointArray[i+1] CGPointValue];
         
-        CAShapeLayer *lineLayer = [CAShapeLayer layer];
-        //线条宽度
-        lineLayer.lineWidth = kLineWidth;
-        //线条的颜色
-        lineLayer.strokeColor = [_lineColor CGColor];
-        [self.layer addSublayer:lineLayer];
-        
         //起点
         CGPathMoveToPoint(path, NULL, startPoint.x, startPoint.y);
         CGPathAddLineToPoint(path, NULL, endPoint.x, endPoint.y);
         
         //设置路径
-        lineLayer.path = path;
+        _lineLayer.path = path;
         
         
         if (_animated)
@@ -199,7 +201,7 @@
             basicAni.fromValue = @(0.0);
             basicAni.toValue = @(1.0);
             
-            [lineLayer addAnimation:basicAni forKey:nil];
+            [_lineLayer addAnimation:basicAni forKey:nil];
         }
         
     }
